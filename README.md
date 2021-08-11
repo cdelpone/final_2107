@@ -202,13 +202,13 @@ pry(main)> item5 = Item.new('Forever Stamps')
 #=> #<Item:0x00007ff17704e140 ...>
 
 pry(main)> attendee1 = Attendee.new(name: 'Megan', budget: '$50')
-#=> #<Attendee:0x00007ff177a45108 ...>
+#=> attendee1 ...>
 
 pry(main)> attendee2 = Attendee.new(name: 'Bob', budget: '$75')
-#=> #<Attendee:0x00007ff17816a4b0 ...>
+#=> attendee2 ...>
 
 pry(main)> attendee3 = Attendee.new(name: 'Mike', budget: '$100')
-#=> #<Attendee:0x00007ff177a0f5f8 ...>
+#=> attendee3 ...>
 
 pry(main)> auction = Auction.new
 #=> #<Auction:0x00007ff17799e038 ...>
@@ -236,32 +236,32 @@ pry(main)> auction.bidders
 
 pry(main)> auction.bidder_info
 #=> {
- #    #<Attendee:0x00007ff177a45108 @budget=50, @name="Megan"> =>
- #      {
- #        :budget => 50,
- #        :items => [#<Item:0x00007ff17702e2a0 ...>]
- #      },
- #    #<Attendee:0x00007ff17816a4b0 @budget=75, @name="Bob"> =>
- #      {
- #        :budget => 75,
- #        :items => [#<Item:0x00007ff17702e2a0...>, #<Item:0x00007ff177ae45f0 ...>]
- #      },
- #    #<Attendee:0x00007ff177a0f5f8 @budget=100, @name="Mike"> =>
- #      {
- #        :budget => 100,
- #        :items => [#<Item:0x00007ff177a9d858...>]
- #      }
- #   }
+    attendee1 @budget=50, @name="Megan"> =>
+      {
+        :budget => 50,
+        :items => [#<Item:0x00007ff17702e2a0 ...>]
+      },
+    attendee2 @budget=75, @name="Bob"> =>
+      {
+        :budget => 75,
+        :items => [#<Item:0x00007ff17702e2a0...>, #<Item:0x00007ff177ae45f0 ...>]
+      },
+    attendee3 @budget=100, @name="Mike"> =>
+      {
+        :budget => 100,
+        :items => [#<Item:0x00007ff177a9d858...>]
+      }
+   }
 
 pry(main)> item1.bids
-#=> {#<Attendee:0x00007ff177a45108 ...> => 22, #<Attendee:0x00007ff17816a4b0 ...> => 20}
+#=> {attendee1 ...> => 22, attendee2 ...> => 20}
 
 pry(main)> item1.close_bidding
 
 pry(main)> item1.add_bid(@attendee3, 70)
 
 pry(main)> item1.bids
-#=> {#<Attendee:0x00007ff177a45108 ...> => 22, #<Attendee:0x00007ff17816a4b0 ...> => 20}
+#=> {attendee1 ...> => 22, attendee2 ...> => 20}
 
 ```
 
