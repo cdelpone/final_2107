@@ -64,23 +64,23 @@ RSpec.describe Auction do
 
       expect(@auction.bidders).to eq(["Megan", "Bob", "Mike"])
 
-      # expect(@auction.bidder_info).to eq({
-      #   @attendee1 @budget=50, @name="Megan"> =>
-      #   {
-      #     :budget => 50,
-      #     :items => [#<Item:0x00007ff17702e2a0 ...>]
-      #   },
-      #   @attendee2 @budget=75, @name="Bob"> =>
-      #   {
-      #     :budget => 75,
-      #     :items => [#<Item:0x00007ff17702e2a0...>, #<Item:0x00007ff177ae45f0 ...>]
-      #   },
-      #   @attendee3 @budget=100, @name="Mike"> =>
-      #   {
-      #     :budget => 100,
-      #     :items => [#<Item:0x00007ff177a9d858...>]
-      #   }
-      #   })
+      expect(@auction.bidder_info).to eq({
+        @attendee1 =>
+        {
+          :budget => 50,
+          :items => [@item1]
+        },
+        @attendee2 =>
+        {
+          :budget => 75,
+          :items => [@item1, @item3]
+        },
+        @attendee3 =>
+        {
+          :budget => 100,
+          :items => [@item4]
+        }
+        })
 
     end
   end
