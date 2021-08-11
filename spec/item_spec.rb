@@ -48,61 +48,6 @@ RSpec.describe Item do
     expect(@item1.current_high_bid).to eq(22)
   end
 end
-
-
-# ## Iteration 3 - More bidding stuff!
-#
-# Use TDD to update your classes to respond to the following interaction pattern.  Some notes:
-# - `bidder_info` should return a hash with keys that are attendees, and values that are a hash with that attendee's budget and an array of items that attendee has bid on.
-# - `close_bidding` should update the item so that it will not accept additional bids'
-#
-# item1 = Item.new('Chalkware Piggy Bank')
-# item2 = Item.new('Bamboo Picture Frame')
-# item3 = Item.new('Homemade Chocolate Chip Cookies')
-# item4 = Item.new('2 Days Dogsitting')
-# item5 = Item.new('Forever Stamps')
-# attendee1 = Attendee.new(name: 'Megan', budget: '$50')
-# attendee2 = Attendee.new(name: 'Bob', budget: '$75')
-# attendee3 = Attendee.new(name: 'Mike', budget: '$100')
-# auction = Auction.new
-# auction.add_item(item1)
-# auction.add_item(item2)
-# auction.add_item(item3)
-# auction.add_item(item4)
-# auction.add_item(item5)
-# item1.add_bid(attendee1, 22)
-# item1.add_bid(attendee2, 20)
-# item4.add_bid(attendee3, 50)
-# item3.add_bid(attendee2, 15)
-#
-# expect(auction.bidders).to eq(["Megan", "Bob", "Mike"])
-#
-# expect(auction.bidder_info).to eq({
-#     attendee1 @budget=50, @name="Megan"> =>
-#       {
-#         :budget => 50,
-#         :items => [#<Item:0x00007ff17702e2a0 ...>]
-#       },
-#     attendee2 @budget=75, @name="Bob"> =>
-#       {
-#         :budget => 75,
-#         :items => [#<Item:0x00007ff17702e2a0...>, #<Item:0x00007ff177ae45f0 ...>]
-#       },
-#     attendee3 @budget=100, @name="Mike"> =>
-#       {
-#         :budget => 100,
-#         :items => [#<Item:0x00007ff177a9d858...>]
-#       }
-#    })
-#
-# expect(item1.bids).to eq({#=> {attendee1 ...> => 22, attendee2 ...> => 20})
-#
-# item1.close_bidding
-#
-# item1.add_bid(@attendee3, 70)
-#
-# expect(item1.bids).to eq({attendee1 ...> => 22, attendee2 ...> => 20})
-#
 # ## Iteration 4 - Dates ! And closing the auction
 #
 # Use TDD to update your classes to respond to the following interaction pattern.  Some notes:

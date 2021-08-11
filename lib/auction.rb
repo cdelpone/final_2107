@@ -33,4 +33,16 @@ class Auction
     end
   end
 
+  def bidders
+    bidder_name = []
+    popular_items.each do |item|
+      item.bids.keys.map do |attendee|
+        bidder_name << attendee.name
+      end
+    end
+    bidder_name.uniq
+  end
+
 end
+# - `bidder_info` should return a hash with keys that are attendees, and values that are a hash with that attendee's budget and an array of items that attendee has bid on.
+# - `close_bidding` should update the item so that it will not accept additional bids'
