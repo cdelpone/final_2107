@@ -12,8 +12,6 @@ class Item
   end
 
   def current_high_bid
-    bids.values.max_by do |value|
-      value
-    end
+    bids.values.max_by { |value| value }
   end
 end
